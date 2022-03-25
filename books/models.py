@@ -4,7 +4,7 @@ from django.db import models
 class Author(models.Model):
     #id = models.AutoField()
     name = models.CharField(max_length=64, null=False, blank=False)
-
+    email = models.EmailField(max_length=40, null=False, blank=False)
     def __str__(self) -> str:
         return f"{self.name}"
 

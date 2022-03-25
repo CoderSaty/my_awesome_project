@@ -3,9 +3,11 @@ from rest_framework import serializers
 from .models import Author,Book
 
 class AuthorSerializer(serializers.ModelSerializer):
+    email=serializers.EmailField()
+    
     class Meta:
         model = Author
-        fields = ['id', 'name']
+        fields = ['id', 'name','email']
 
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
