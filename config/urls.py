@@ -8,7 +8,7 @@ from django.views.generic import TemplateView
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework.authtoken.views import obtain_auth_token
 from rest_framework import routers
-from books.views import AuthorViewSet,BookViewSet
+from books.views import AuthorViewSet, BookViewSet
 
 router = routers.DefaultRouter()
 router.register(
@@ -50,7 +50,7 @@ urlpatterns += [
         SpectacularSwaggerView.as_view(url_name="api-schema"),
         name="api-docs",
     ),
-    path('book/', include('books.urls')),
+    path("book/", include("books.urls")),
 ]
 
 if settings.DEBUG:
@@ -78,5 +78,3 @@ if settings.DEBUG:
         import debug_toolbar
 
         urlpatterns = [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns
-
-
